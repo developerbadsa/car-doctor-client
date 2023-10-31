@@ -24,9 +24,8 @@ const BookService = () => {
             price: price
         }
 
-        console.log(booking);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('http://localhost:3000/booking', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'
@@ -40,6 +39,7 @@ const BookService = () => {
                 alert('service book successfully')
             }
         })
+        .catch((err=>console.log(err)))
 
     }
 
