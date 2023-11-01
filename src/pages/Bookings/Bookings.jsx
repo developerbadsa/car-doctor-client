@@ -3,6 +3,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import BookingRow from "./BookingRow";
 import axios, { Axios } from "axios";
 import { useQuery } from "@tanstack/react-query";
+import LoadingSpinner from "../../firebase/components/LoadingSpinner";
 
 const Bookings = () => {
     const { user } = useContext(AuthContext);
@@ -20,7 +21,6 @@ const Bookings = () => {
         }
     })
 
-    console.log( isPending)
 
     
 
@@ -74,7 +74,7 @@ const Bookings = () => {
 
 
     if(isPending){
-        return <>hello</>
+        return <LoadingSpinner></LoadingSpinner>
     }
 
     return (
