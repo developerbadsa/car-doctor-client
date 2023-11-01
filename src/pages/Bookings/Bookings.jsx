@@ -16,7 +16,7 @@ const Bookings = () => {
     const { data: bookings ,isPending,refetch } = useQuery({
         queryKey: ['userBookings'],
         queryFn: async () => {
-            const data =await fetch(url)
+            const data =await fetch(url, {credentials: 'include'})
             return await data.json();
         }
     })
